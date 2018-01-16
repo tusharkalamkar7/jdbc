@@ -1,24 +1,25 @@
 
 CREATE TABLE 'Employee'
 (
-id int NOT NULL,
-firstName varchar2(30),
-lastName varchar2(30),
+empId int NOT NULL,
+firstName varchar(30),
+lastName varchar(30),
 mobNo int,
 deptId
 createdDateTime date,
 updatedDateTime date,
 createdId int,
-updatedId int
+updatedId int,
+PRIMARY KEY (empId)
 )
 
 CREATE TABLE 'Address'
 (
 id int NOT NULL,
 empId
-line1 varchar2(30),
-line2 varchar2(30),
-city varchar2(20),
+line1 varchar(30),
+line2 varchar(30),
+city varchar(20),
 state varchar2(20),
 pincode int,
 createdDateTime date,
@@ -30,7 +31,7 @@ updatedId int
 CREATE TABLE 'Department'
 (
 id int NOT NULL,
-deptName varchar2(30),
+deptName varchar(30),
 createdDateTime date,
 updatedDateTime date,
 createdId int,
