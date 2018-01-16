@@ -5,12 +5,13 @@ empId int NOT NULL,
 firstName varchar(30),
 lastName varchar(30),
 mobNo int,
-deptId
+deptId int,
 createdDateTime date,
 updatedDateTime date,
 createdId int,
 updatedId int,
-PRIMARY KEY (empId)
+PRIMARY KEY (empId),
+FOREIGN KEY (deptId) REFERENCES Department(deptId)
 )
 
 CREATE TABLE 'Address'
