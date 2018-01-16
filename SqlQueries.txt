@@ -25,16 +25,18 @@ pincode int,
 createdDateTime date,
 updatedDateTime date,
 createdId int,
-updatedId int
+updatedId int,
+PRIMARY KEY (id)
 )
 
 CREATE TABLE 'Department'
 (
-id int NOT NULL,
+deptId int NOT NULL,
 deptName varchar(30),
 createdDateTime date,
 updatedDateTime date,
 createdId int,
-updatedId int
+updatedId int,
+PRIMARY KEY (deptId)
 )
 
