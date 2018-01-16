@@ -17,7 +17,7 @@ FOREIGN KEY (deptId) REFERENCES Department(deptId)
 CREATE TABLE 'Address'
 (
 id int NOT NULL,
-empId
+empId int,
 line1 varchar(30),
 line2 varchar(30),
 city varchar(20),
@@ -27,7 +27,8 @@ createdDateTime date,
 updatedDateTime date,
 createdId int,
 updatedId int,
-PRIMARY KEY (id)
+PRIMARY KEY (id),
+FOREIGN KEY (empId) REFERENCES Employee(empId)
 )
 
 CREATE TABLE 'Department'
