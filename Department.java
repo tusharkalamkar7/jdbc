@@ -38,7 +38,8 @@ public class Department {
 			this.createdDateTime = createdDateTime;
 		}
 		public Date getUpdatedDateTime() {
-			return updatedDateTime;
+			Date now = new Date();
+			return now;
 		}
 		public void setUpdatedDateTime(Date updatedDateTime) {
 			this.updatedDateTime = updatedDateTime;
