@@ -31,7 +31,7 @@ public class JDBCPreparedStatementCreateExample {
 		PreparedStatement preparedStatement = null;
 
 		String createTableSQL = "CREATE TABLE Address("
-				+"id int NOT NULL,"
+				+"id int NOT NULL AUTO_INCREMENT,"
 				+"empId int,"
 				+"line1 varchar(30),"
 				+"line2 varchar(30),"
