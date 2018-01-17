@@ -3,7 +3,7 @@ import java.util.*;
 
 public class DepartmentDAO implements DepartmentDAOI{
 
-	private User extractUserFromResultSet(ResultSet rs) throws SQLException {
+	private Department extractUserFromResultSet(ResultSet rs) throws SQLException {
  	 Department dept = new Department();
    	 dept.setDeptId( rs.getInt("deptId") );
    	 dept.setDeptName( rs.getString("deptName") );
@@ -59,7 +59,7 @@ public class DepartmentDAO implements DepartmentDAOI{
 
 	}
 
-public User getDepartment(int id) {
+public Department getDepartment(int id) {
     Connection connection = ConnectionFactory.getConnection();
     try {
         Statement stmt = connection.createStatement();
