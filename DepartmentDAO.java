@@ -58,8 +58,8 @@ public class DepartmentDAO implements DepartmentDAOI{
 
 	}
 
-	public User getDepartment(int id) {
-    Connection connection = connectionFactory.getConnection();
+public User getDepartment(int id) {
+    Connection connection = ConnectionFactory.getConnection();
     try {
         Statement stmt = connection.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM Department WHERE deptId=" + id);
@@ -73,8 +73,7 @@ public class DepartmentDAO implements DepartmentDAOI{
     return null;
 }
 public Set getAllDepartments() {
-    Connector connector = new Connector();
-    Connection connection = connector.getConnection();
+    Connection connection = ConnectionFactory.getConnection();
     try {
         Statement stmt = connection.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM Department");
@@ -91,8 +90,7 @@ public Set getAllDepartments() {
     return null;
 }
 public boolean insertDepartment(Department dept) {
-    Connector connector = new Connector();
-    Connection connection = connector.getConnection();
+    Connection connection = ConnectionFactory.getConnection();
     try {
         PreparedStatement ps = connection.prepareStatement("INSERT INTO Department VALUES (NULL, ?, ?, ?,?,?)");
         ps.setString(1, dept.getDeptName());
@@ -111,8 +109,7 @@ public boolean insertDepartment(Department dept) {
     return false;
 }
 public boolean updateUser(Department dept) {
-    Connector connector = new Connector();
-    Connection connection = connector.getConnection();
+    Connection connection = ConnectionFactory.getConnection();
     try {
         PreparedStatement ps = connection.prepareStatement("UPDATE Department SET deptName=?, createdDateTime=?,updatedDateTime=?, createdId=?,updatedId=? WHERE deptId=?");
           ps.setString(1, dept.getDeptName());
@@ -131,8 +128,7 @@ public boolean updateUser(Department dept) {
     return false;
 }
 public boolean deleteUser(int id) {
-    Connector connector = new Connector();
-    Connection connection = connector.getConnection();
+    Connection connection = ConnectionFactory.getConnection();
     try {
         Statement stmt = connection.createStatement();
         int i = stmt.executeUpdate("DELETE FROM Department WHERE deptId=" + id);
