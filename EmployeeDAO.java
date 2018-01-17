@@ -65,7 +65,7 @@ public class EmployeeDAO implements EmployeeDAOI{
 	}
 
 public User getEmployee(int id) {
-    Connection connection = connectionFactory.getConnection();
+    Connection connection = ConnectionFactory.getConnection();
     try {
         Statement stmt = connection.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM Employee WHERE empId=" + id);
@@ -79,8 +79,7 @@ public User getEmployee(int id) {
     return null;
 }
 public Set getAllEmployees() {
-    Connector connector = new Connector();
-    Connection connection = connector.getConnection();
+    Connection connection = ConnectionFactory.getConnection();
     try {
         Statement stmt = connection.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM Employee");
@@ -97,8 +96,7 @@ public Set getAllEmployees() {
     return null;
 }
 public boolean insertEmployee(Employee emp) {
-    Connector connector = new Connector();
-    Connection connection = connector.getConnection();
+    Connection connection = ConnectionFactory.getConnection();
     try {
         PreparedStatement ps = connection.prepareStatement("INSERT INTO Employee VALUES (NULL, ?, ?, ?,?,?,?,?,?)");
         ps.setString(1, emp.getFirstName());
@@ -121,8 +119,7 @@ public boolean insertEmployee(Employee emp) {
     return false;
 }
 public boolean updateEmployee(Employee emp) {
-    Connector connector = new Connector();
-    Connection connection = connector.getConnection();
+    Connection connection = ConnectionFactory.getConnection();
     try {
         PreparedStatement ps = connection.prepareStatement("UPDATE Employee SET firstName=?, lastName=?, mobNo=?, deptId=?,createdDateTime=?,updatedDateTime=?,createdId=?,updatedId=? WHERE empId=?");
         ps.setString(1, emp.getFirstName());
@@ -145,8 +142,7 @@ public boolean updateEmployee(Employee emp) {
     return false;
 }
 public boolean deleteEmployee(int id) {
-    Connector connector = new Connector();
-    Connection connection = connector.getConnection();
+    Connection connection = ConnectionFactory.getConnection();
     try {
         Statement stmt = connection.createStatement();
         int i = stmt.executeUpdate("DELETE FROM Employee WHERE empId=" + id);
