@@ -69,7 +69,7 @@ public class AddressDAO implements AddressDAOI{
 	}
 
 public User getAddress(int id) {
-    Connection connection = connectionFactory.getConnection();
+    Connection connection = ConnectionFactory.getConnection();
     try {
         Statement stmt = connection.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM Address WHERE id=" + id);
@@ -84,8 +84,7 @@ public User getAddress(int id) {
 }
 	
 public Set getAllAddresses() {
-    Connector connector = new Connector();
-    Connection connection = connector.getConnection();
+    Connection connection = ConnectionFactory.getConnection();
     try {
         Statement stmt = connection.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM Address");
@@ -103,8 +102,7 @@ public Set getAllAddresses() {
 }
 	
 public boolean insertAddress(Address addr) {
-    Connector connector = new Connector();
-    Connection connection = connector.getConnection();
+    Connection connection = ConnectionFactory.getConnection();
     try {
         PreparedStatement ps = connection.prepareStatement("INSERT INTO Address VALUES (NULL, ?, ?, ?,?,?,?,?,?,?)");
         ps.setString(1, addr.getLine1());
@@ -128,8 +126,7 @@ public boolean insertAddress(Address addr) {
 }
 	
 public boolean updateAddress(Address addr) {
-    Connector connector = new Connector();
-    Connection connection = connector.getConnection();
+    Connection connection = ConnectionFactory.getConnection();
     try {
         PreparedStatement ps = connection.prepareStatement("UPDATE Address SET line1=?, line2=?,city=?,state=?,pincode=?,createdDateTime=?,updatedDateTime=?,createdId=?,updatedId=? WHERE id=?");
         ps.setString(1, addr.getLine1());
@@ -153,8 +150,7 @@ public boolean updateAddress(Address addr) {
 }
 	
 public boolean deleteAddress(int id) {
-    Connector connector = new Connector();
-    Connection connection = connector.getConnection();
+    Connection connection = ConnectionFactory.getConnection();
     try {
         Statement stmt = connection.createStatement();
         int i = stmt.executeUpdate("DELETE FROM Address WHERE id=" + id);
