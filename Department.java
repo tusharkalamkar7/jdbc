@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class Department {
 
     private Integer deptId;
@@ -16,29 +18,40 @@ public class Department {
 	this.createdId = createdId;
 	this.updatedId = updatedId;
     }
-    
-    public Integer getAge() {
-        return age;
-    }
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-    public Integer getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getPass() {
-        return pass;
-    }
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
+		public Integer getDeptId() {
+			return deptId;
+		}
+		public void setDeptId(Integer deptId) {
+			this.deptId = deptId;
+		}
+		public String getDeptName() {
+			return deptName;
+		}
+		public void setDeptName(String deptName) {
+			this.deptName = deptName;
+		}
+		public Date getCreatedDateTime() {
+			return createdDateTime;
+		}
+		public void setCreatedDateTime(Date createdDateTime) {
+			this.createdDateTime = createdDateTime;
+		}
+		public Date getUpdatedDateTime() {
+			return updatedDateTime;
+		}
+		public void setUpdatedDateTime(Date updatedDateTime) {
+			this.updatedDateTime = updatedDateTime;
+		}
+		public Integer getCreatedId() {
+			return createdId;
+		}
+		public void setCreatedId(Integer createdId) {
+			this.createdId = createdId;
+		}
+		public Integer getUpdatedId() {
+			return updatedId;
+		}
+		public void setUpdatedId(Integer updatedId) {
+			this.updatedId = updatedId;
+		}
 }
