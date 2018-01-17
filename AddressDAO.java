@@ -17,8 +17,58 @@ public class AddressDAO implements AddressDAOI{
    	 
    	 return addr;
 	}
+	
+	private static void createTable() throws SQLException {
 
-	public User getAddress(int id) {
+		Connection dbConnection = null;
+		PreparedStatement preparedStatement = null;
+
+		String createTableSQL = "CREATE TABLE Address("
+				+"id NUMBER NOT NULL AUTO_INCREMENT,"
+				+"empId NUMBER,"
+				+"line1 varchar(30),"
+				+"line2 varchar(30),"
+				+"city varchar(20),"
+				+"state varchar(20),"
+				+"pincode NUMBER,"
+				+"createdDateTime date,"
+				+"updatedDateTime date,"
+				+"createdId NUMBER,"
+				+"updatedId NUMBER,"
+				+"PRIMARY KEY (id),"
+				+"FOREIGN KEY (empId) REFERENCES Employee(empId)"
+				+")";
+
+		try {
+			dbConnection = ConnectionFactory.getConnection();
+			preparedStatement = dbConnection.prepareStatement(createTableSQL);
+
+			System.out.println(createTableSQL);
+
+			// execute create SQL stetement
+			preparedStatement.executeUpdate();
+
+			System.out.println("Table Address is created!");
+
+		} catch (SQLException e) {
+
+			System.out.println(e.getMessage());
+
+		} finally {
+
+			if (preparedStatement != null) {
+				preparedStatement.close();
+			}
+
+			if (dbConnection != null) {
+				dbConnection.close();
+			}
+
+		}
+
+	}
+
+public User getAddress(int id) {
     Connection connection = connectionFactory.getConnection();
     try {
         Statement stmt = connection.createStatement();
@@ -32,6 +82,7 @@ public class AddressDAO implements AddressDAOI{
     }
     return null;
 }
+	
 public Set getAllAddresses() {
     Connector connector = new Connector();
     Connection connection = connector.getConnection();
@@ -50,6 +101,7 @@ public Set getAllAddresses() {
     }
     return null;
 }
+	
 public boolean insertAddress(Address addr) {
     Connector connector = new Connector();
     Connection connection = connector.getConnection();
@@ -74,6 +126,7 @@ public boolean insertAddress(Address addr) {
     }
     return false;
 }
+	
 public boolean updateAddress(Address addr) {
     Connector connector = new Connector();
     Connection connection = connector.getConnection();
@@ -98,6 +151,7 @@ public boolean updateAddress(Address addr) {
     }
     return false;
 }
+	
 public boolean deleteAddress(int id) {
     Connector connector = new Connector();
     Connection connection = connector.getConnection();
@@ -111,6 +165,6 @@ public boolean deleteAddress(int id) {
         ex.printStackTrace();
     }
     return false;
-}
+ }
 
 }
