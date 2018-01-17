@@ -32,7 +32,7 @@ public class JDBCPreparedStatementCreateExample {
 		PreparedStatement preparedStatement = null;
 
 		String createTableSQL = "CREATE TABLE Department ("
-				+"deptId int NOT NULL,"
+				+"deptId int NOT NULL AUTO_INCREMENT,"
 				+"deptName varchar(30),"
 				+"createdDateTime date,"
 				+"updatedDateTime date,"
