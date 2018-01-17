@@ -3,7 +3,7 @@ import java.util.*;
 
 public class AddressDAO implements AddressDAOI{
 
-	private User extractUserFromResultSet(ResultSet rs) throws SQLException {
+	private Address extractUserFromResultSet(ResultSet rs) throws SQLException {
  	 Address addr = new Address();
    	 addr.setId( rs.getInt("id") );
    	 addr.setLine1( rs.getString("line1") );
@@ -69,7 +69,7 @@ public class AddressDAO implements AddressDAOI{
 
 	}
 
-public User getAddress(int id) {
+public Address getAddress(int id) {
     Connection connection = ConnectionFactory.getConnection();
     try {
         Statement stmt = connection.createStatement();
