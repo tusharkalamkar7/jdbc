@@ -64,7 +64,8 @@ public class Address {
 		this.pincode = pincode;
 	}
 	public Date getCreatedDateTime() {
-		return createdDateTime;
+		Date now = new Date();
+		return now;
 	}
 	public void setCreatedDateTime(Date createdDateTime) {
 		this.createdDateTime = createdDateTime;
