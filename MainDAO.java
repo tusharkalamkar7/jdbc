@@ -5,7 +5,7 @@ import java.sql.*;
 
 public class MainDAO {
 
-	private User extractUserFromResultSet(ResultSet rs) throws SQLException {
+	private Employee extractUserFromResultSet(ResultSet rs) throws SQLException {
 	 	 Employee emp = new Employee();
 	   	 emp.setEmpId( rs.getInt("empId") );
 	   	 emp.setFirstName( rs.getString("firstName") );
