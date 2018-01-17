@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class Employee{
 
 private  Integer empId;
@@ -24,28 +26,59 @@ private  Integer updatedId;
 	this.updatedId=updatedId;
     }
     
-    public Integer getFirstName() {
-        return age;
-    }
-    public void setFirstName(Integer age) {
-        this.age = age;
-    }
-    public Integer getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getPass() {
-        return pass;
-    }
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
+   public Integer getEmpId() {
+		return empId;
+	}
+	public void setEmpId(Integer empId) {
+		this.empId = empId;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getMobNo() {
+		return mobNo;
+	}
+	public void setMobNo(String mobNo) {
+		this.mobNo = mobNo;
+	}
+	public Integer getDeptId() {
+		return deptId;
+	}
+	public void setDeptId(Integer deptId) {
+		this.deptId = deptId;
+	}
+	public Date getCreatedDateTime() {
+		return createdDateTime;
+	}
+	public void setCreatedDateTime(Date createdDateTime) {
+		this.createdDateTime = createdDateTime;
+	}
+	public Date getUpdatedDateTime() {
+		return updatedDateTime;
+	}
+	public void setUpdatedDateTime(Date updatedDateTime) {
+		this.updatedDateTime = updatedDateTime;
+	}
+	public Integer getCreatedId() {
+		return createdId;
+	}
+	public void setCreatedId(Integer createdId) {
+		this.createdId = createdId;
+	}
+	public Integer getUpdatedId() {
+		return updatedId;
+	}
+	public void setUpdatedId(Integer updatedId) {
+		this.updatedId = updatedId;
+	}
+	
 }
