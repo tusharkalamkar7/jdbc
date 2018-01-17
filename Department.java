@@ -31,7 +31,8 @@ public class Department {
 			this.deptName = deptName;
 		}
 		public Date getCreatedDateTime() {
-			return createdDateTime;
+			Date now = new Date();
+			return now;
 		}
 		public void setCreatedDateTime(Date createdDateTime) {
 			this.createdDateTime = createdDateTime;
