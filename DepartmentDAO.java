@@ -112,12 +112,11 @@ public boolean insertDepartment(Department dept) {
 public boolean updateUser(Department dept) {
     Connection connection = ConnectionFactory.getConnection();
     try {
-        PreparedStatement ps = connection.prepareStatement("UPDATE Department SET deptName=?,updatedDateTime=?, createdId=?,updatedId=? WHERE deptId=?");
+        PreparedStatement ps = connection.prepareStatement("UPDATE Department SET deptName=?,updatedDateTime=?,updatedId=? WHERE deptId=?");
           ps.setString(1, dept.getDeptName());
         ps.setDate(2, dept.getUpdatedDateTime);
-        ps.setInt(3, dept.getCreatedId);
-        ps.setInt(4,dept.getUpdatedId);
-        ps.setInt(5,dept.getDeptId);
+        ps.setInt(3,dept.getUpdatedId);
+        ps.setInt(4,dept.getDeptId);
         int i = ps.executeUpdate();
       if(i == 1) {
     return true;
