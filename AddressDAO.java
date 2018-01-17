@@ -129,16 +129,15 @@ public boolean insertAddress(Address addr) {
 public boolean updateAddress(Address addr) {
     Connection connection = ConnectionFactory.getConnection();
     try {
-        PreparedStatement ps = connection.prepareStatement("UPDATE Address SET line1=?, line2=?,city=?,state=?,pincode=?,updatedDateTime=?,createdId=?,updatedId=? WHERE id=?");
+        PreparedStatement ps = connection.prepareStatement("UPDATE Address SET line1=?, line2=?,city=?,state=?,pincode=?,updatedDateTime=?,updatedId=? WHERE id=?");
         ps.setString(1, addr.getLine1());
         ps.setString(2, addr.getLine2());
         ps.setString(3, addr.getCity());
         ps.setString(4, addr.getState());
         ps.setInt(5,addr.getPincode());
         ps.setDate(6,addr.getUpdatedDateTime());
-        ps.setInt(7,addr.getCreatedId());
-        ps.setInt(8,addr.getUpdatedId());
-        ps.setInt(9,addr.getId());
+        ps.setInt(7,addr.getUpdatedId());
+        ps.setInt(8,addr.getId());
         int i = ps.executeUpdate();
       if(i == 1) {
     return true;
