@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class JDBCPreparedStatementCreateExample {
 
 	private static final String DB_DRIVER = "oracle.jdbc.driver.OracleDriver";
-	private static final String DB_CONNECTION = "jdbc:oracle:thin:@localhost:1521:MKYONG";
+	private static final String DB_CONNECTION = "jdbc:oracle:thin:@localhost:1521:orcl";
 	private static final String DB_USER = "user";
 	private static final String DB_PASSWORD = "password";
 
@@ -32,12 +32,12 @@ public class JDBCPreparedStatementCreateExample {
 		PreparedStatement preparedStatement = null;
 
 		String createTableSQL = "CREATE TABLE Department ("
-				+"deptId int NOT NULL AUTO_INCREMENT,"
+				+"deptId NUMBER NOT NULL AUTO_INCREMENT,"
 				+"deptName varchar(30),"
 				+"createdDateTime date,"
 				+"updatedDateTime date,"
-				+"createdId int,"
-				+"updatedId int,"
+				+"createdId NUMBER,"
+				+"updatedId NUMBER,"
 				+"PRIMARY KEY (deptId)"
 				+")";
 
