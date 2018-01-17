@@ -3,7 +3,7 @@ import java.util.*;
 
 public class EmployeeDAO implements EmployeeDAOI{
 
-	private User extractUserFromResultSet(ResultSet rs) throws SQLException {
+	private Employee extractUserFromResultSet(ResultSet rs) throws SQLException {
  	 Employee emp = new Employee();
    	 emp.setEmpId( rs.getInt("empId") );
    	 emp.setFirstName( rs.getString("firstName") );
@@ -65,7 +65,7 @@ public class EmployeeDAO implements EmployeeDAOI{
 
 	}
 
-public User getEmployee(int id) {
+public Employee getEmployee(int id) {
     Connection connection = ConnectionFactory.getConnection();
     try {
         Statement stmt = connection.createStatement();
