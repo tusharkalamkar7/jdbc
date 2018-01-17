@@ -42,3 +42,25 @@ updatedId int,
 PRIMARY KEY (deptId)
 )
 
+SELECT * FROM Employee E
+   INNER JOIN Address A
+      ON E.empId = A.empId
+   INNER JOIN Department D
+      ON D.deptId = E.deptId
+  WHERE D.deptId = 'X' AND A.city = 'Y'
+      
+SELECT * FROM Employee E
+INNER JOIN Address A
+   ON E.empId = A.empId
+INNER JOIN Department D
+   ON D.deptId = E.deptId
+   WHERE D.deptName = 'X' AND A.city = 'Y'
+   
+   SELECT * FROM Employee E
+   INNER JOIN Address A
+      ON E.empId = A.empId
+   INNER JOIN Department D
+      ON D.deptId = E.deptId
+   WHERE E.firstname LIKE 'X%' AND 
+   D.updatedDateTime >= add_months(TRUNC(SYSDATE) + 1, 3);
+
