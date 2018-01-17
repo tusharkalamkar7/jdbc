@@ -18,6 +18,7 @@ public class MainDAO {
 	   	 emp.setUpdatedId(rs.getInt("updatedId"));
 	   	 return emp;
 	}
+	//Get all employees who work in X deptid and lives in Y city
 	public Set findByDeptIdAndCity(Integer deptId,String city) {
 	    Connection connection = ConnectionFactory.getConnection();
 	    try {
@@ -38,7 +39,7 @@ public class MainDAO {
 	    }
 	    return null;
 	}
-	
+	//get all employees who live in x city and work in Y dept
 	public Set findByDeptAndCity(String deptName,String city) {
 	    Connection connection = ConnectionFactory.getConnection();
 	    try {
@@ -59,7 +60,7 @@ public class MainDAO {
 	    }
 	    return null;
 	}
-	
+	//Get all employees whose name start with X name and is active i.e. (Assumed)Updated Date is greater than 3 Months.
 	public Set findByNameAndExpiry(String empName) {
 	    Connection connection = ConnectionFactory.getConnection();
 	    try {
