@@ -122,17 +122,16 @@ public boolean insertEmployee(Employee emp) {
 public boolean updateEmployee(Employee emp) {
     Connection connection = ConnectionFactory.getConnection();
     try {
-        PreparedStatement ps = connection.prepareStatement("UPDATE Employee SET firstName=?, lastName=?, mobNo=?, deptId=?,createdDateTime=?,updatedDateTime=?,createdId=?,updatedId=? WHERE empId=?");
+        PreparedStatement ps = connection.prepareStatement("UPDATE Employee SET firstName=?, lastName=?, mobNo=?, deptId=?,updatedDateTime=?,createdId=?,updatedId=? WHERE empId=?");
         ps.setString(1, emp.getFirstName());
         ps.setString(2, emp.getLastName());
         ps.setString(3, emp.getMobNo());
         ps.setInt(4, emp.getDeptId());
-        
-        ps.setDate(5, emp.getCreatedDateTime());
-        ps.setDate(6, emp.getUpdatedDateTime());
-        ps.setInt(7, emp.getCreatedId());
-        ps.setInt(8, emp.getUpdatedId());
-        ps.setInt(9, emp.getEmpId());
+       
+        ps.setDate(5, emp.getUpdatedDateTime());
+        ps.setInt(6, emp.getCreatedId());
+        ps.setInt(7, emp.getUpdatedId());
+        ps.setInt(8, emp.getEmpId());
         int i = ps.executeUpdate();
       if(i == 1) {
     return true;
