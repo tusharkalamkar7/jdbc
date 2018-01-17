@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class Address {
 
     private Integer id;
